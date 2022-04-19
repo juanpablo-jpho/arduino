@@ -20,8 +20,9 @@ int selecOpc() {
 
   int opc = 0;
   Serial.println("Elige una opción");
-  Serial.println("1. Suma");
-  Serial.println("2. Resta");
+  Serial.println("1. Abrir puerta");
+  Serial.println("2. Prender foco");
+  Serial.println("3. Salir");
   while (opc == 0) {
 
     while ( Serial.available() > 0 ) {
