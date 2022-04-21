@@ -13,19 +13,21 @@ void setup() {
 }
 
 void loop() {
-    titileo();
+    int opcion = showMenu();
+    if (opcion == 1) {
+      //hacer algo
+    }
+    if (opcion == 2) {
+       toogleFoco()
+    }
+    if (opcion == 3) {
+      //hacer algo
+    }
+    //y asi para cada opción
+
 }
 
-void titileo() {
 
-    if ( digitalRead(LEDSALA) == HIGH ) {
-        digitalWrite(LEDSALA, LOW);  
-    } else {
-         digitalWrite(LEDSALA, HIGH);  
-    } 
-    delay(2000);
-     
-}
 
 int showMenu() {
   int opc = 0;
