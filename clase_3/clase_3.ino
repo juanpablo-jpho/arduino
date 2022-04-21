@@ -1,22 +1,30 @@
+#define LEDSALA 16
+
+
 boolean focoSala = false;
 boolean focoComedor = false;
 boolean focoCocina = false;
 
+
+
 void setup() {
   Serial.begin(9600);
+  pinMode(LEDSALA, OUTPUT);
 }
 
 void loop() {
-  int opcion = showMenu();
-  if (opcion == 2) {
-    toogleFoco();
-  }
-  if (opcion ==3) {
-      apagarAll();
-  }
-  if (opcion ==4) {
-      conocerStateLed();
-  }
+    titileo();
+}
+
+void titileo() {
+
+    if ( digitalRead(LEDSALA) == HIGH ) {
+        digitalWrite(LEDSALA, LOW);  
+    } else {
+         digitalWrite(LEDSALA, HIGH);  
+    } 
+    delay(2000);
+     
 }
 
 int showMenu() {
@@ -68,6 +76,12 @@ void toogleFoco() {
       Serial.println("Foco de la Cocina prendiddo");
       focoCocina = true;
     }
+    if ( digitalRead(LEDSALA) == HIGH ) {
+        Serial.println("Foco de la Cocina apagada");
+        digitalWrite(LEDSALA, LOW);  
+    } else {
+         digitalWrite(LEDSALA, HIGH);  
+    } 
   }
 
   if (focoSelected == 2) {
