@@ -13,21 +13,17 @@ void setup() {
 }
 
 void loop() {
-    int opcion = showMenu();
-    if (opcion == 1) {
-      //hacer algo
-    }
-    if (opcion == 2) {
-       toogleFoco()
-    }
-    if (opcion == 3) {
-      //hacer algo
-    }
-    //y asi para cada opción
-
+  int opcion = showMenu();
+  if (opcion == 2) {
+    toogleFoco();
+  }
+  if (opcion ==3) {
+      apagarAll();
+  }
+  if (opcion ==4) {
+      conocerStateLed();
+  }
 }
-
-
 
 int showMenu() {
   int opc = 0;
@@ -78,12 +74,6 @@ void toogleFoco() {
       Serial.println("Foco de la Cocina prendiddo");
       focoCocina = true;
     }
-    if ( digitalRead(LEDSALA) == HIGH ) {
-        Serial.println("Foco de la Cocina apagada");
-        digitalWrite(LEDSALA, LOW);  
-    } else {
-         digitalWrite(LEDSALA, HIGH);  
-    } 
   }
 
   if (focoSelected == 2) {
