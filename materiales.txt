@@ -1,0 +1,9 @@
+Materiales
+
+5 leds
+4 pulsantes
+cable multipar
+esp8266
+corta uñas
+resistencias ->   1kohm | 330ohm
+protoboard
